@@ -21,10 +21,10 @@
                 <a class="a-bus f-50p">¿Quiénes somos?</a>
             </div>
         </div>
-        <?php echo $this->mensaje; ?>
-        <?php
-            require 'vistas/diseños/piePag.php';
-        ?>
     </div>
+    <?php echo $this->mensaje; ?>
+    <?php
+        require 'vistas/diseños/piePag.php';
+    ?>
 </body>
 </html>
