@@ -1,0 +1,70 @@
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+}
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+a {
+    background-color: red;
+}
+
+.fb-sbtwn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    & > * {
+        flex: 1 100%;
+    }
+}
+.f-50p {
+    flex: 1 50%;
+}
+.fb-center {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    & > * {
+        flex: 1 100%;
+    }
+}
+.hidden-nav {
+    display: none;
+}
+
+@keyframes toDots {
+    from {transform: scaleX(1.0);}
+    to {transform: scaleX(0.4);}
+}
+.bars-anim {
+    animation-name: toDots;
+    animation-duration: 1s;
+}
+@keyframes toBars {
+    from {transform: scaleX(1.0);}
+    to {transform: scaleX(4.0);}
+}
+.dots-anim {
+    animation-name: toBars;
+    animation-duration: 1s;
+}
+.fa {
+    font-size: 30px;
+}
+/* * {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    font-family: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}*/
