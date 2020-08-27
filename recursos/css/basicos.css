@@ -10,17 +10,14 @@ html {
 *, *:before, *:after {
   box-sizing: inherit; }
 
-a {
-  background-color: red; }
-
-.fb-sbtwn {
+.fb-s-btwn {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; }
-  .fb-sbtwn > * {
+  .fb-s-btwn > * {
     flex: 1 100%; }
 
-.f-50p {
+.fi-50p {
   flex: 1 50%; }
 
 .fb-center {
@@ -32,6 +29,24 @@ a {
 
 .hidden-nav {
   display: none; }
+
+.title-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(#960000, #969600); }
+  .title-container__text {
+    flex: 0 1 auto;
+    font-size: 60px;
+    position: relative;
+    color: #ddf;
+    z-index: 1; }
+
+.text-container {
+  height: 100vh; }
 
 @keyframes toDots {
   from {

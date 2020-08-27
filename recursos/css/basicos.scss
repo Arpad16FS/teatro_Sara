@@ -10,11 +10,8 @@ html {
   *, *:before, *:after {
     box-sizing: inherit;
 }
-a {
-    background-color: red;
-}
 
-.fb-sbtwn {
+.fb-s-btwn {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -23,7 +20,7 @@ a {
         flex: 1 100%;
     }
 }
-.f-50p {
+.fi-50p {
     flex: 1 50%;
 }
 .fb-center {
@@ -37,6 +34,28 @@ a {
 }
 .hidden-nav {
     display: none;
+}
+
+.title-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgb(150,0,0), rgb(150,150,0));
+
+    &__text {
+        flex: 0 1 auto;
+        font-size: 60px;
+        position: relative;
+        color: #ddf;
+        z-index: 1;
+    }
+}
+
+.text-container {
+    height: 100vh;
 }
 
 @keyframes toDots {
