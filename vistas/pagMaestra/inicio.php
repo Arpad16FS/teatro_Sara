@@ -4,6 +4,8 @@
 <body>
     <div class="wrapper fb-s-btwn">
         <div class="title-container">
+            <img class="title-container__img title-container__img--sun" src="recursos/imagenes/pagMaestra/sun-in-his-splendor-1.svg" alt="El Sol">
+            <img class="title-container__img title-container__img--moon" src="recursos/imagenes/pagMaestra/moon-in-his-splendor-1.svg" alt="La Luna">
             <h1 class="title-container__text">Gran Teatro Sara</h1>
         </div>
         <div class="text-container fb-s-btwn">

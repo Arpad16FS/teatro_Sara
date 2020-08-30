@@ -44,6 +44,8 @@ html {
     justify-content: center;
     align-items: center;
     background-image: linear-gradient(rgb(150,0,0), rgb(150,150,0));
+    position: relative;
+    overflow: hidden;
 
     &__text {
         flex: 0 1 auto;
@@ -51,6 +53,24 @@ html {
         position: relative;
         color: #ddf;
         z-index: 1;
+    }
+
+    &__img {
+        position: absolute;
+        z-index: 0;
+        height: 30vh;
+        min-width: 150px;
+        transform: translateY(-50%);
+        top: 50%;
+
+        &--moon {
+            left: 100%;
+            mix-blend-mode: difference;
+        }
+        &--sun {
+            mix-blend-mode: overlay;
+
+        }
     }
 }
 
