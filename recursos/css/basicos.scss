@@ -37,36 +37,40 @@ html {
 }
 
 .title-container {
-    height: 100vh;
+    height: 200vh;
     width: 100vw;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    // justify-content: center;
+    // align-items: center;
     background-image: linear-gradient(rgb(150,0,0), rgb(150,150,0));
+    background-attachment: fixed;
     position: relative;
     overflow: hidden;
 
     &__text {
         flex: 0 1 auto;
         font-size: 60px;
-        position: relative;
+        // position: fixed;
         color: #ddf;
+        padding: 0 15px;
         z-index: 1;
+        transform: translate3d(0,0,0);
+
     }
 
     &__img {
         position: absolute;
         z-index: 0;
         height: 30vh;
-        min-width: 150px;
-        transform: translateY(-50%);
-        top: 50%;
+        min-height: 150px;
+        transform: translate3d(calc(-50% + 50vw),calc(-50% + 50vh),0);
+        // transition: transform 100ms;
 
         &--moon {
-            left: 100%;
             mix-blend-mode: difference;
-        }
+            transform: translate3d(calc(50vw + 50%),0,0);
+    }
         &--sun {
             mix-blend-mode: overlay;
 
