@@ -1,86 +1,147 @@
 html {
-  box-sizing: border-box;
-  font-size: 16px; }
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 16px;
+}
 
 * {
   margin: 0;
   padding: 0;
-  font-family: inherit; }
+  font-family: inherit;
+}
 
-*, *:before, *:after {
-  box-sizing: inherit; }
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+:root {
+  --courtains-bg-1: #a71a40, #941739, #821432, #6f112b, #5d0f24, #4a0c1c, #380915 10px, #4a0c1c, #5d0f24, #6f112b, #821432, #941739, #a71a40;
+  --sky-bg-1: #
+;
+}
 
 .fb-s-btwn {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; }
-  .fb-s-btwn > * {
-    flex: 1 100%; }
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.fb-s-btwn > * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 100%;
+          flex: 1 100%;
+}
 
 .fi-50p {
-  flex: 1 50%; }
+  -webkit-box-flex: 1;
+      -ms-flex: 1 50%;
+          flex: 1 50%;
+}
 
 .fb-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center; }
-  .fb-center > * {
-    flex: 1 100%; }
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.fb-center > * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 100%;
+          flex: 1 100%;
+}
 
 .hidden-nav {
-  display: none; }
+  display: none;
+}
 
-.title-container {
-  height: 200vh;
-  width: 100vw;
-  display: flex;
-  flex-wrap: wrap;
-  background-image: linear-gradient(#960000, #969600);
-  background-attachment: fixed;
-  position: relative;
-  overflow: hidden; }
-  .title-container__text {
-    flex: 0 1 auto;
-    font-size: 60px;
-    color: #ddf;
-    padding: 0 15px;
-    z-index: 1;
-    transform: translate3d(0, 0, 0); }
-  .title-container__img {
-    position: absolute;
-    z-index: 0;
-    height: 30vh;
-    min-height: 150px;
-    transform: translate3d(calc(-50% + 50vw), calc(-50% + 50vh), 0); }
-    .title-container__img--moon {
-      mix-blend-mode: difference;
-      transform: translate3d(calc(50vw + 50%), 0, 0); }
-    .title-container__img--sun {
-      mix-blend-mode: overlay; }
+.title {
+  height: 150vh;
+  background-image: linear-gradient(2deg, red, purple, orange, yellow, green, blue);
+  background-size: 3000%;
+  -webkit-animation: trip 1s ease-in-out infinite alternate;
+          animation: trip 1s ease-in-out infinite alternate;
+}
+
+.title__container {
+  height: 100vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-image: repeating-linear-gradient(90deg, var(--courtains-bg-1));
+  background-image: radial-gradient(circle at 100% 50%, var(--sky-bg-1) 50vw);
+}
+
+.title__container__img {
+  position: absolute;
+  height: Max(34vw, 300px);
+  max-height: 750px;
+  -webkit-animation: enter 1.5s ease-in-out infinite alternate;
+          animation: enter 1.5s ease-in-out infinite alternate;
+  -webkit-transform-origin: 50% 0;
+          transform-origin: 50% 0;
+}
+
+.title__container__img--moon {
+  -webkit-transform: translate3d(50%, 50%, 0);
+          transform: translate3d(50%, 50%, 0);
+}
+
+@-webkit-keyframes enter {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0) rotate(10deg);
+            transform: translate3d(0, 0, 0) rotate(10deg);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 50vw, 0) rotate(-10deg);
+            transform: translate3d(0, 50vw, 0) rotate(-10deg);
+  }
+}
+
+@keyframes enter {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0) rotate(10deg);
+            transform: translate3d(0, 0, 0) rotate(10deg);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 50vw, 0) rotate(-10deg);
+            transform: translate3d(0, 50vw, 0) rotate(-10deg);
+  }
+}
+
+@-webkit-keyframes trip {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+@keyframes trip {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
 
 .text-container {
-  height: 100vh; }
-
-@keyframes toDots {
-  from {
-    transform: scaleX(1); }
-  to {
-    transform: scaleX(0.4); } }
-.bars-anim {
-  animation-name: toDots;
-  animation-duration: 1s; }
-
-@keyframes toBars {
-  from {
-    transform: scaleX(1); }
-  to {
-    transform: scaleX(4); } }
-.dots-anim {
-  animation-name: toBars;
-  animation-duration: 1s; }
-
-.fa {
-  font-size: 30px; }
+  height: 300vh;
+}
 
 /* * {
     margin: 0;
@@ -92,5 +153,4 @@ html {
 html {
     font-size: 62.5%;
 }*/
-
 /*# sourceMappingURL=basicos.css.map */

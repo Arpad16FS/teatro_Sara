@@ -3,13 +3,13 @@ require 'vistas/diseños/cabecera.php';
 ?>
 
 <body>
-    <div class="wrapper fb-s-btwn">
-        <div class="title-container">
-            <img class="title-container__img title-container__img--sun" src="recursos/imagenes/pagMaestra/sun-in-his-splendor-1.svg" alt="El Sol">
-            <img class="title-container__img title-container__img--moon" src="recursos/imagenes/pagMaestra/moon-in-his-splendor-1.svg" alt="La Luna">
-            <h1 class="title-container__text">Gran Teatro Sara</h1>
+    <section class="title">
+        <div class="title__container">
+            <img class="title__container__img title__container__img--sun" src="recursos/imagenes/pagMaestra/sun-in-his-splendor-1.svg" alt="El Sol">
+            <img class="title__container__img title__container__img--moon" src="recursos/imagenes/pagMaestra/moon-in-his-splendor-1.svg" alt="La Luna">
+            <h1 class="title__container__text">Gran Teatro Sara</h1>
         </div>
-    </div>
+    </section>
     <div class="text-container fb-s-btwn">
         <h2>Bienvenido a la nueva forma de disfrutar el teatro</h2>
         <p>En hora buena, estas a punto de experimentar una experiencia sin igual, ya casi estás ahí, solo debes <b>llegar</b> montandote al bus.</p>
@@ -30,7 +30,6 @@ require 'vistas/diseños/cabecera.php';
     <?php
     require 'vistas/diseños/piePag.php';
     ?>
-    <!-- <script src="recursos/js/scroll.js"></script> -->
 </body>
 
 </html>

@@ -7,8 +7,15 @@ html {
     padding: 0;
     font-family: inherit;
 }
-  *, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: inherit;
+}
+
+:root {
+    --courtains-bg-1: #a71a40, #941739, #821432, #6f112b, #5d0f24, #4a0c1c, #380915 10px, #4a0c1c, #5d0f24, #6f112b, #821432, #941739, #a71a40;
+    --sky-bg-1: #
 }
 
 .fb-s-btwn {
@@ -36,70 +43,56 @@ html {
     display: none;
 }
 
-.title-container {
-    height: 200vh;
-    width: 100vw;
-    display: flex;
-    flex-wrap: wrap;
-    // justify-content: center;
-    // align-items: center;
-    background-image: linear-gradient(rgb(150,0,0), rgb(150,150,0));
-    background-attachment: fixed;
-    position: relative;
-    overflow: hidden;
+.title {
+    height: 150vh;
+    background-image: linear-gradient(2deg, red, purple, orange, yellow, green, blue);
+    background-size: 3000%;
+    animation: trip 1s ease-in-out infinite alternate;
 
-    &__text {
-        flex: 0 1 auto;
-        font-size: 60px;
-        // position: fixed;
-        color: #ddf;
-        padding: 0 15px;
-        z-index: 1;
-        transform: translate3d(0,0,0);
 
-    }
+    &__container {
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        background-image: repeating-linear-gradient(90deg, var(--courtains-bg-1));
+        background-image: radial-gradient(circle at 100% 50%, var(--sky-bg-1) 50vw);
+        // background-size: 100vw 800vh;
+        
+        &__img {
+            position: absolute;
+            // transform: translate3d(50%, 50%, 0) rotate(10deg);
+            height: Max(34vw, 300px);
+            max-height: 750px;
+            animation: enter 1.5s ease-in-out infinite alternate;
+            transform-origin: 50% 0;
 
-    &__img {
-        position: absolute;
-        z-index: 0;
-        height: 30vh;
-        min-height: 150px;
-        transform: translate3d(calc(-50% + 50vw),calc(-50% + 50vh),0);
-        // transition: transform 100ms;
+            &--moon {
+                transform: translate3d(50%, 50%, 0);
 
-        &--moon {
-            mix-blend-mode: difference;
-            transform: translate3d(calc(50vw + 50%),0,0);
-    }
-        &--sun {
-            mix-blend-mode: overlay;
-
+            }
         }
     }
 }
 
-.text-container {
-    height: 100vh;
+@keyframes enter {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(10deg);
+    }
+    100% {
+        transform: translate3d(0, 50vw, 0) rotate(-10deg);
+    }
+}
+@keyframes trip {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
 }
 
-@keyframes toDots {
-    from {transform: scaleX(1.0);}
-    to {transform: scaleX(0.4);}
-}
-.bars-anim {
-    animation-name: toDots;
-    animation-duration: 1s;
-}
-@keyframes toBars {
-    from {transform: scaleX(1.0);}
-    to {transform: scaleX(4.0);}
-}
-.dots-anim {
-    animation-name: toBars;
-    animation-duration: 1s;
-}
-.fa {
-    font-size: 30px;
+.text-container {
+    height: 300vh;
 }
 /* * {
     margin: 0;
