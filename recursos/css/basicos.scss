@@ -1,15 +1,38 @@
-html {
+:root {
     box-sizing: border-box;
     font-size: 16px;
+
+    --primary-color: rgba(122, 54, 0, 0.6);
+    --primary-dark: rgba(91, 40, 0, 0.6);
+    --courtains-bg-1: #a71a40, #941739, #821432, #6f112b, #5d0f24, #4a0c1c, #380915, #4a0c1c, #5d0f24, #6f112b, #821432, #941739, #a71a40;
+    --sky-bg-1: rgba(150,0,0,1), rgba(150,150,0,1);
+    --sky-bg-2: #4d1a6a 17%, #2f247e 40%, #1e5799 71%, #547499 100%;
 }
 * {
     margin: 0;
     padding: 0;
     font-family: inherit;
 }
-  *, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: inherit;
 }
+/* give-3d {
+    display: inline-flex;
+    justify-content: center;
+    transform-origin: top;
+    transform: perspective(200px) rotateX(-15deg);
+    & > * {
+        filter: drop-shadow(35px 65px 5px rgba(0,0,0,0.2));
+        flex: 1 100%;
+    }
+
+    & > img {
+        align-self: start;
+        max-height: 100%;
+    }
+} */
 
 .fb-s-btwn {
     display: flex;
@@ -36,21 +59,24 @@ html {
     display: none;
 }
 
-.title-container {
-    height: 200vh;
-    width: 100vw;
+.title {
+    height: 100vh;
+    // width: 100vw;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
-    // justify-content: center;
-    // align-items: center;
-    background-image: linear-gradient(rgb(150,0,0), rgb(150,150,0));
+    background-image: linear-gradient(var(--sky-bg-1)),
+                       linear-gradient(var(--sky-bg-2))
+    ;
     background-attachment: fixed;
     position: relative;
     overflow: hidden;
 
     &__text {
         flex: 0 1 auto;
-        font-size: 60px;
+        position: absolute;
+        font-size: 3rem;
         // position: fixed;
         color: #ddf;
         padding: 0 15px;
@@ -62,18 +88,15 @@ html {
     &__img {
         position: absolute;
         z-index: 0;
-        height: 30vh;
+        width: Max(30vh, 30vw);
         min-height: 150px;
-        transform: translate3d(calc(-50% + 50vw),calc(-50% + 50vh),0);
-        // transition: transform 100ms;
 
-        &--moon {
-            mix-blend-mode: difference;
-            transform: translate3d(calc(50vw + 50%),0,0);
-    }
         &--sun {
             mix-blend-mode: overlay;
-
+        }
+        &--moon {
+            mix-blend-mode: difference;
+            left: 100%;
         }
     }
 }
