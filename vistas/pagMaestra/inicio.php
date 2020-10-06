@@ -4,11 +4,9 @@ require 'vistas/diseños/cabecera.php';
 
 <body>
     <section class="title">
-        <div class="title__container">
-            <img class="title__container__img title__container__img--sun" src="recursos/imagenes/pagMaestra/sun-in-his-splendor-1.svg" alt="El Sol">
-            <img class="title__container__img title__container__img--moon" src="recursos/imagenes/pagMaestra/moon-in-his-splendor-1.svg" alt="La Luna">
-            <h1 class="title__container__text">Gran Teatro Sara</h1>
-        </div>
+        <h1 class="title__text">Gran Teatro Sara</h1>
+        <img class="title__img title__img--sun" src="recursos/imagenes/pagMaestra/sun-in-his-splendor-1.svg" alt="El Sol">
+        <img class="title__img title__img--moon" src="recursos/imagenes/pagMaestra/moon-in-his-splendor-1.svg" alt="La Luna">
     </section>
     <div class="text-container fb-s-btwn">
         <h2>Bienvenido a la nueva forma de disfrutar el teatro</h2>

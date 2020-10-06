@@ -1,6 +1,12 @@
-html {
+:root {
     box-sizing: border-box;
     font-size: 16px;
+
+    --primary-color: rgba(122, 54, 0, 0.6);
+    --primary-dark: rgba(91, 40, 0, 0.6);
+    --courtains-bg-1: #a71a40, #941739, #821432, #6f112b, #5d0f24, #4a0c1c, #380915, #4a0c1c, #5d0f24, #6f112b, #821432, #941739, #a71a40;
+    --sky-bg-1: rgba(150,0,0,1), rgba(150,150,0,1);
+    --sky-bg-2: #4d1a6a 17%, #2f247e 40%, #1e5799 71%, #547499 100%;
 }
 * {
     margin: 0;
@@ -12,6 +18,21 @@ html {
 *:after {
     box-sizing: inherit;
 }
+/* give-3d {
+    display: inline-flex;
+    justify-content: center;
+    transform-origin: top;
+    transform: perspective(200px) rotateX(-15deg);
+    & > * {
+        filter: drop-shadow(35px 65px 5px rgba(0,0,0,0.2));
+        flex: 1 100%;
+    }
+
+    & > img {
+        align-self: start;
+        max-height: 100%;
+    }
+} */
 
 :root {
     --courtains-bg-1: #a71a40, #941739, #821432, #6f112b, #5d0f24, #4a0c1c, #380915 10px, #4a0c1c, #5d0f24, #6f112b, #821432, #941739, #a71a40;
@@ -44,11 +65,28 @@ html {
 }
 
 .title {
-    height: 150vh;
-    background-image: linear-gradient(2deg, red, purple, orange, yellow, green, blue);
-    background-size: 3000%;
-    animation: trip 1s ease-in-out infinite alternate;
+    height: 100vh;
+    // width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-image: linear-gradient(var(--sky-bg-1)),
+                       linear-gradient(var(--sky-bg-2))
+    ;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
 
+    &__text {
+        flex: 0 1 auto;
+        position: absolute;
+        font-size: 3rem;
+        // position: fixed;
+        color: #ddf;
+        padding: 0 15px;
+        z-index: 1;
+        transform: translate3d(0,0,0);
 
     &__container {
         height: 100vh;
@@ -66,10 +104,18 @@ html {
             animation: enter 1.5s ease-in-out infinite alternate;
             transform-origin: 50% 0;
 
-            &--moon {
-                transform: translate3d(50%, 50%, 0);
+    &__img {
+        position: absolute;
+        z-index: 0;
+        width: Max(30vh, 30vw);
+        min-height: 150px;
 
-            }
+        &--sun {
+            mix-blend-mode: overlay;
+        }
+        &--moon {
+            mix-blend-mode: difference;
+            left: 100%;
         }
     }
 }

@@ -1,18 +1,30 @@
 $(document).ready(function () {
-    $('title__container__img').css({
+    gsap.registerPlugin(ScrollTrigger);
 
+    let titleTL = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".title",
+            start: "top top",
+            end: "100%",
+            scrub: 1,
+            markers: true,
+        }        
     });
-    $('.title__container__img').on('animationend', function (e) {
-        $(this).css({
-            'transform': 'rotate(50deg)',
-            width: "20vw"
-        });
-        console.log($(this));
-    });
 
-    // $('.title__container__img').on('animationend', animEnd, false);
-
-    // function animEnd(e) {
-    //     console.log('animended');
-    // }
+    titleTL.addLabel("titleStart")
+    .to(".title__img--sun", {
+        x: "-100vw",
+        y: "50vh",
+    }, "titleStart")
+    .to(".title__img--moon", {
+        x: "-100vw",
+        y: "50vh",
+    }, "titleStart")
+    .to(".title__text", {
+        y: "40vh",
+    }, "titleStart")
+    .to(".title", {
+        backgroundImage: "linear-gradient(rgba(150,0,0,0), rgba(150,150,0,0)), linear-gradient(#4d1a6a 17%, #2f247e 40%, #1e5799 71%, #547499 100%)",
+    }, "titleStart")
+    ;
 });

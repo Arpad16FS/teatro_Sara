@@ -24,29 +24,28 @@ $(document).ready(function () {
         // do the onscroll stuff you want here
         var scrolled = window.pageYOffset;
         let scrolledPrcnt = Math.round(window.pageYOffset / vpHeight * 50);
-        // let txtYOffset = -50+(scrolledPrcnt*0.5);
-        let txtYOffset2 = 50+(scrolledPrcnt*1.5);
         let sunXOffset = -50-scrolledPrcnt;
         let sunXOffset2 = 50-scrolledPrcnt;
+        let imgYOffset = -50-(scrolledPrcnt*0.5);
         let imgYOffset2 = 50+(scrolledPrcnt*2);
         let moonXOffset = Math.max(0, 100-scrolledPrcnt);
         let moonRotation = Math.round(30 - Math.min(60, scrolledPrcnt*0.6));
         let sunRotation = Math.round(-Math.min(30, scrolledPrcnt*0.6));
-        let val1 = scrolledPrcnt/100;
-        let val2 = 1-scrolledPrcnt/100;
-        titleBG.css({
-            'background-image': 'linear-gradient(rgba(150,150,0,'+val2+'), rgba(150,0,0,'+val2+')), linear-gradient(rgba(0,150,150,1), rgba(0,0,150,1))'
-        });
-        titleText.css({
-            'transform': 'translate3d(calc(-50% + 50vw),calc(-50% + '+txtYOffset2+ 'vh),0)'
-        });
+        //a let val1 = Math.round(Math.min(255, scrolled / titleBG.height() * 255));
+        //a let val2 = Math.round(Math.max(0, 150 - scrolled / titleBG.height() * 150));
+        //a titleBG.css({
+        //a     'background-image': 'linear-gradient(rgb(' + val2 + ',' + val1 + ',' + val1 + '), rgb(' + val2 + ',' + val2 + ',' + val1 + '))'
+        //a });
+        //a titleText.css({
+        //a     'top': Math.round(scrolled * 0.5) + 'px'
+        //a });
 
         titleSun.css({
-            'transform': 'translate3d(calc('+sunXOffset+'% + ' +sunXOffset2+ 'vw),calc(-50% + ' +imgYOffset2+ 'vh),0)'+
+            'transform': 'translate3d(calc('+sunXOffset+'% + ' +sunXOffset2+ 'vw),' + 'calc('+imgYOffset+'% + ' +imgYOffset2+ 'vh),0)'+
             'rotate('+sunRotation+'deg)'
         });
         titleMoon.css({
-            'transform': 'translate3d(calc(-'+scrolledPrcnt+'% + ' +moonXOffset+ 'vw),calc(-50% + ' +imgYOffset2+ 'vh),0)'+
+            'transform': 'translate3d(calc(-'+scrolledPrcnt+'% + ' +moonXOffset+ 'vw),' + 'calc('+imgYOffset+'% + ' +imgYOffset2+ 'vh),0)'+
             'rotate('+moonRotation+'deg)'
         });
         console.log(scrolledPrcnt + '%');
