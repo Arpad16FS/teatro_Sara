@@ -4,8 +4,9 @@
   font-size: 16px;
   --primary-color: rgba(122, 54, 0, 0.6);
   --primary-dark: rgba(91, 40, 0, 0.6);
-  --courtains-bg-1: #a71a40, #941739, #821432, #6f112b, #5d0f24, #4a0c1c, #380915, #4a0c1c, #5d0f24, #6f112b, #821432, #941739, #a71a40;
-  --sky-bg-1: rgba(150,0,0,1), rgba(150,150,0,1);
+  --courtains-bg-1: #a71a40, #941739, #821432, #6f112b, #5d0f24, #4a0c1c, #380915, #4a0c1c, #5d0f24, #6f112b, #821432,
+        #941739, #a71a40;
+  --sky-bg-1: rgba(150, 0, 0, 1), rgba(150, 150, 0, 1);
   --sky-bg-2: #4d1a6a 17%, #2f247e 40%, #1e5799 71%, #547499 100%;
 }
 
@@ -114,96 +115,38 @@
           transform: translate3d(0, 0, 0);
 }
 
-.title__img {
+.title__text__container {
+  height: 100vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-image: repeating-linear-gradient(90deg, var(--courtains-bg-1));
+  background-image: radial-gradient(circle at 100% 50%, var(--sky-bg-1) 50vw);
+}
+
+.title__text__container__img {
+  position: absolute;
+  height: Max(34vw, 300px);
+  max-height: 750px;
+  -webkit-animation: enter 1.5s ease-in-out infinite alternate;
+          animation: enter 1.5s ease-in-out infinite alternate;
+  -webkit-transform-origin: 50% 0;
+          transform-origin: 50% 0;
+}
+
+.title__text__container__img__img {
   position: absolute;
   z-index: 0;
   width: Max(30vh, 30vw);
   min-height: 150px;
 }
 
-.title__img--sun {
+.title__text__container__img__img--sun {
   mix-blend-mode: overlay;
 }
 
-.title__img--moon {
+.title__text__container__img__img--moon {
   mix-blend-mode: difference;
   left: 100%;
 }
-
-.text-container {
-  height: 100vh;
-}
-
-@-webkit-keyframes toDots {
-  from {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
-  }
-  to {
-    -webkit-transform: scaleX(0.4);
-            transform: scaleX(0.4);
-  }
-}
-
-@keyframes toDots {
-  from {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
-  }
-  to {
-    -webkit-transform: scaleX(0.4);
-            transform: scaleX(0.4);
-  }
-}
-
-.bars-anim {
-  -webkit-animation-name: toDots;
-          animation-name: toDots;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-}
-
-@-webkit-keyframes toBars {
-  from {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
-  }
-  to {
-    -webkit-transform: scaleX(4);
-            transform: scaleX(4);
-  }
-}
-
-@keyframes toBars {
-  from {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
-  }
-  to {
-    -webkit-transform: scaleX(4);
-            transform: scaleX(4);
-  }
-}
-
-.dots-anim {
-  -webkit-animation-name: toBars;
-          animation-name: toBars;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-}
-
-.fa {
-  font-size: 30px;
-}
-
-/* * {
-    margin: 0;
-    padding: 0;
-    font-size: 1em;
-    font-family: inherit;
-}
-
-html {
-    font-size: 62.5%;
-}*/
 /*# sourceMappingURL=basicos.css.map */

@@ -4,8 +4,9 @@
 
     --primary-color: rgba(122, 54, 0, 0.6);
     --primary-dark: rgba(91, 40, 0, 0.6);
-    --courtains-bg-1: #a71a40, #941739, #821432, #6f112b, #5d0f24, #4a0c1c, #380915, #4a0c1c, #5d0f24, #6f112b, #821432, #941739, #a71a40;
-    --sky-bg-1: rgba(150,0,0,1), rgba(150,150,0,1);
+    --courtains-bg-1: #a71a40, #941739, #821432, #6f112b, #5d0f24, #4a0c1c, #380915, #4a0c1c, #5d0f24, #6f112b, #821432,
+        #941739, #a71a40;
+    --sky-bg-1: rgba(150, 0, 0, 1), rgba(150, 150, 0, 1);
     --sky-bg-2: #4d1a6a 17%, #2f247e 40%, #1e5799 71%, #547499 100%;
 }
 * {
@@ -33,11 +34,6 @@
         max-height: 100%;
     }
 } */
-
-:root {
-    --courtains-bg-1: #a71a40, #941739, #821432, #6f112b, #5d0f24, #4a0c1c, #380915 10px, #4a0c1c, #5d0f24, #6f112b, #821432, #941739, #a71a40;
-    --sky-bg-1: #
-}
 
 .fb-s-btwn {
     display: flex;
@@ -71,9 +67,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    background-image: linear-gradient(var(--sky-bg-1)),
-                       linear-gradient(var(--sky-bg-2))
-    ;
+    background-image: linear-gradient(var(--sky-bg-1)), linear-gradient(var(--sky-bg-2));
     background-attachment: fixed;
     position: relative;
     overflow: hidden;
@@ -86,67 +80,39 @@
         color: #ddf;
         padding: 0 15px;
         z-index: 1;
-        transform: translate3d(0,0,0);
+        transform: translate3d(0, 0, 0);
 
-    &__container {
-        height: 100vh;
-        position: sticky;
-        top: 0;
-        background-image: repeating-linear-gradient(90deg, var(--courtains-bg-1));
-        background-image: radial-gradient(circle at 100% 50%, var(--sky-bg-1) 50vw);
-        // background-size: 100vw 800vh;
-        
-        &__img {
-            position: absolute;
-            // transform: translate3d(50%, 50%, 0) rotate(10deg);
-            height: Max(34vw, 300px);
-            max-height: 750px;
-            animation: enter 1.5s ease-in-out infinite alternate;
-            transform-origin: 50% 0;
+        &__container {
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            background-image: repeating-linear-gradient(90deg, var(--courtains-bg-1));
+            background-image: radial-gradient(circle at 100% 50%, var(--sky-bg-1) 50vw);
+            // background-size: 100vw 800vh;
 
-    &__img {
-        position: absolute;
-        z-index: 0;
-        width: Max(30vh, 30vw);
-        min-height: 150px;
+            &__img {
+                position: absolute;
+                // transform: translate3d(50%, 50%, 0) rotate(10deg);
+                height: Max(34vw, 300px);
+                max-height: 750px;
+                animation: enter 1.5s ease-in-out infinite alternate;
+                transform-origin: 50% 0;
 
-        &--sun {
-            mix-blend-mode: overlay;
+                &__img {
+                    position: absolute;
+                    z-index: 0;
+                    width: Max(30vh, 30vw);
+                    min-height: 150px;
+
+                    &--sun {
+                        mix-blend-mode: overlay;
+                    }
+                    &--moon {
+                        mix-blend-mode: difference;
+                        left: 100%;
+                    }
+                }
+            }
         }
-        &--moon {
-            mix-blend-mode: difference;
-            left: 100%;
-        }
     }
 }
-
-@keyframes enter {
-    0% {
-        transform: translate3d(0, 0, 0) rotate(10deg);
-    }
-    100% {
-        transform: translate3d(0, 50vw, 0) rotate(-10deg);
-    }
-}
-@keyframes trip {
-    0% {
-        background-position: left;
-    }
-    100% {
-        background-position: right;
-    }
-}
-
-.text-container {
-    height: 300vh;
-}
-/* * {
-    margin: 0;
-    padding: 0;
-    font-size: 1em;
-    font-family: inherit;
-}
-
-html {
-    font-size: 62.5%;
-}*/
